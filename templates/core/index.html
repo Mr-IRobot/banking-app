@@ -1,0 +1,864 @@
+
+
+
+{% extends 'core/base.html' %}
+
+{% load static %}
+
+
+{% block head_title %}Banking System{% endblock %}
+
+{% block content %}
+{% load static %}
+<body class="home">
+    <!-- Google Tag Manager (noscript) --><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KP6Q2M"
+        height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="sr-only">Documents in Portable Document Format (PDF) require Adobe Acrobat Reader 5.0 or higher to view,
+      <a href="http://get.adobe.com/reader/" class="sr-only external" title="External Link">download Adobe® Acrobat
+        Reader</a>.</div><a href="#main" class="sr-only">Skip Navigation</a>
+    <div class="master-container">
+      <div class="alert hidden-alert" id="alertBox" role="region" aria-label="Important Notice">
+        <div class="container">
+          <div data-content-block="alertCopy" data-content="content" data-editable="editable" class="alert-body">
+            <div><br></div>
+          </div><button type="button" class="close"><span aria-hidden="true">×</span><span class="sr-only">Close
+              notice</span></button>
+        </div>
+      </div>
+      <header class="header">
+        <div class="container">
+          <div class="row">
+            <div class="col-xs-12">
+              <div class="left"><a href="index.html" class="logo"
+                   title="First Federal Bank of Florida, Live Oak, FL"><span class="logotype"><!--<img
+                      src="assets/img/logo.svg" alt="First Federal Bank of Florida, Live Oak, FL">--><b>BREEZE FEDERAL BANK</b></span></a></div> 
+              <div class="nav__left"><a href="#" class="toggle-search"><span class="icon icon-search"></span> Search</a>
+                <div class="headerSearch__container">
+                  <form name="headerSearchForm" id="headerSearch__form" action="https://www.ffbf.com/search"
+                    data-parsley-validate="">
+                    <div class="input-wrapper"><label for="headerSearch__input" class="sr-only">What can we help you
+                        find?</label> <input type="text" name="q" id="headerSearch__input"
+                        placeholder="What can we help you find?" required=""> <button type="submit"
+                        id="headerSearch__button"><span class="icon icon-search"><span class="sr-only">Submit
+                            Search</span></span></button></div>
+                  </form>
+                </div>
+              </div>
+              <div class="modal-login right hidden-xs"><a data-toggle="modal" href="/accounts/login/"><button type="submit"
+                    class="btn ben-modal-login"><span class="icon icon-lock"></span> Login</button></a>
+              </div>
+              <div class="modal-login right hidden-xs"><a data-toggle="modal" href="/accounts/register"><button type="submit"
+                class="btn ben-modal-login"><span class="icon icon-lock"></span> Register</button></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+      <div class="toolbar-container">
+        <nav class="toolbar">
+          <ul>
+            <li><a href="tel:18774990572"><span class="text">1-877-499-0572</span><span
+                  class="icon icon-phone"></span></a></li>
+            <li><a href="contact-us.html"><span class="text">Contact Us</span><span class="icon icon-mail"></span></a>
+            </li>
+            <li><a
+                href="https://app.five9.com/consoles/ChatConsole/index.html?title=First%20Federal%20Bank&amp;tenant=First%20Federal%20Bank%20of%20FL&amp;profiles=Customer%20Care%20Chat&amp;showProfiles=false&amp;autostart=true&amp;theme=https%3A%2F%2Fwww.ffbf.com%2Fassets%2Fcss%2Fnine5.css&amp;surveyOptions=%7B%22showComment%22%3Afalse%2C%22requireComment%22%3Afalse%7D&amp;fields=%7B%22name%22%3A%7B%22value%22%3A%22%22%2C%22show%22%3Atrue%2C%22label%22%3A%22Name%22%7D%2C%22email%22%3A%7B%22value%22%3A%22%22%2C%22show%22%3Atrue%2C%22label%22%3A%22Email%22%7D%7D&amp;playSoundOnMessage=true&amp;allowCustomerToControlSoundPlay=false&amp;showEmailButton=false&amp;useBusinessHours=true&amp;showPrintButton=false&amp;allowUsabilityMenu=false&amp;enableCallback=false&amp;callbackList=&amp;allowRequestLiveAgent=false"
+                target="_blank" class="chat-toggle"><span class="text">Chat</span><span class="icon icon-chat"></span></a>
+            </li>
+            <li><a href="locator.html"><span class="text">Locations</span><span class="icon icon-location"></span></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <script src="{% static '../app.five9.com/five9_clients/consoles_latest/SocialWidget/five9-social-widget.min.js' %}"></script>
+      <script>var options = { rootUrl: "https://app.five9.com/consoles/", type: "chat", title: "First Federal Bank", tenant: "First Federal Bank of FL", profiles: "Customer Care Chat", showProfiles: !1, autostart: !0, theme: "https://www.ffbf.com/assets/css/nine5.css", surveyOptions: { showComment: !1, requireComment: !1 }, fields: { name: { value: "", show: !0, label: "Name" }, email: { value: "", show: !0, label: "Email" } }, playSoundOnMessage: !0, allowCustomerToControlSoundPlay: !1, showEmailButton: !0, hideDuringAfterHours: !0, useBusinessHours: !1, showPrintButton: !1, allowUsabilityMenu: !1, enableCallback: !1, callbackList: "", allowRequestLiveAgent: !1 }; Five9SocialWidget.addWidget(options)</script>
+      <style type="text/css">
+        @font-face {
+          font-family: Karla;
+          font-style: normal;
+          font-weight: 400;
+          src: local(''), url(assets/font/karla-v15-latin-regular.html) format('woff2'), url(https://www.ffbf.com/assets/font/karla-v15-latin-regular.woff) format('woff')
+        }
+  
+        body {
+          font-family: Karla, sans-serif !important
+        }
+  
+        . five9-frame-minimized {
+          display: none !important
+        }
+  
+        .provider,
+        .provider-text,
+        .provider:focus,
+        .provider:hover {
+          cursor: default !important;
+          display: none !important
+        }
+      </style>
+      <nav class="navbar">
+        <div class="container">
+          <div class="row">
+            <div class="nav__center">
+              <!-- Brand and toggle get grouped for better mobile display -->
+              <div class="navbar-header pull-left"><button type="button" class="navbar-toggle collapsed"
+                  data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"><span
+                    class="hamburger"><span class="icon-bar"></span> <span class="icon-bar"></span> <span
+                      class="icon-bar"></span> </span><span class="menu-text">MENU</span></button></div>
+              <div class="modal-login right visible-xs pull-right"><a data-toggle="modal" href="#olbModal"><button
+                    type="submit" class="btn ben-modal-login"><span class="icon icon-lock"></span> Login</button></a>
+              </div><!-- Collect the nav links, forms, and other content for toggling -->
+              <div class="collapse navbar-collapse" id="navbar-collapse">
+                <div class="mobile-search__container visible-sm visible-xs">
+                  <form name="mobileSearchForm" id="mobileSearch__form" action="https://www.ffbf.com/search"
+                    data-parsley-validate="">
+                    <div class="input-wrapper"><label for="mobileSearch__input" class="sr-only">Mobile: What can we help
+                        you find?</label> <input type="text" name="q" id="mobileSearch__input"
+                        placeholder="What can we help you find?" required=""> <button type="submit"
+                        id="mobileSearch__button"><span class="icon icon-search"><span class="sr-only">Submit
+                            Search</span></span></button></div>
+                  </form>
+                </div>
+                <ul class="banno-menu menu-86113ac0-f85a-11e6-b273-005056a30020">
+                  <li class="dropdown menu-category">
+                    <span role="link" aria-expanded="false" class="category-item" tabindex="0">Personal</span>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Bank</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="personal/checking.html">Checking</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="personal/savings.html">Savings</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="personal/debit-cards.html">Debit Cards</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Borrow</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="personal/mortgage-loans.html">Mortgages</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="personal/consumer-loans.html">Consumer</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="personal/mortgage-loan-officers/florida.html">Mortgage Loan Officers</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="credit-cards.html">Credit Cards</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Access</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="personal/mobile-banking.html">Mobile Banking</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="personal/online-banking.html">Online Banking</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="calculators.html">Calculators</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-category">
+                    <span role="link" aria-expanded="false" class="category-item" tabindex="0">Mortgages</span>
+                    <ul class="dropdown-menu">
+                      <li class="menu-internal">
+                        <a href="personal/mortgage-loans.html">Mortgages</a>
+  
+                      </li>
+                      <li class="menu-internal">
+                        <a href="personal/mortgage-loan-officers/florida.html">Mortgage Loan Officers</a>
+  
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-category">
+                    <span role="link" aria-expanded="false" class="category-item" tabindex="0">Business</span>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Bank</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="business/checking.html">Business Checking</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="business/savings.html">Business Savings</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="business/debit-cards.html">Debit Cards</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Borrow</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="business/loans-and-lines-of-credit.html">Loans and Lines of Credit</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="business/commercial-loan-officers.html">Commercial Loan Officers</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="business/sba-lending.html">SBA Lending</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="credit-cards.html">Credit Cards</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Access</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="business/online-banking.html">Online Banking</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="calculators.html">Calculators</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="business/lockbox-services.html">LockBox Services</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-category">
+                    <span role="link" aria-expanded="false" class="category-item" tabindex="0">About</span>
+                    <ul class="dropdown-menu">
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Connect</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-internal">
+                            <a href="about/careers.html">Careers</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/executive-teams.html">Executive Teams</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/board-of-directors.html">Board of Directors</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="dropdown menu-group">
+                        <span role="link" aria-expanded="false" class="group-item" tabindex="0">Learn</span>
+                        <ul class="dropdown-menu">
+                          <li class="menu-external">
+                            <a href="http://blog.ffbf.com/">Bank Posts</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/community.html">Community</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/crp.html">Community Rewards Program</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/history.html">Our History</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/quarterly-balance-sheet.html">Quarterly Balance Sheet</a>
+  
+                          </li>
+                          <li class="menu-internal">
+                            <a href="about/community-request-guidelines.html">Community Request Guidelines</a>
+  
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </li>
+                  <li class="dropdown menu-category">
+                    <span role="link" aria-expanded="false" class="category-item" tabindex="0">Support</span>
+                    <ul class="dropdown-menu">
+                      <li class="menu-internal">
+                        <a href="contact-us.html">Contact Us</a>
+  
+                      </li>
+                      <li class="menu-internal">
+                        <a href="about/customer-service.html">Customer Service</a>
+  
+                      </li>
+                      <li class="menu-internal">
+                        <a href="support/frequently-asked-questions.html">Frequently Asked Questions</a>
+  
+                      </li>
+                      <li class="menu-internal">
+                        <a href="locator.html">Locations</a>
+  
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </nav>
+      <div class="modal fade" id="olbModal">
+        <div class="modal-dialog">
+          <div class="background-grid"></div>
+          <div class="modal-content"><button type="button" class="close" data-dismiss="modal" aria-hidden="true"><span
+                class="icon icon-left-double"></span><span class="text"> Back</span></button>
+            <div class="modal-header"><img src="{% static './assets/img/olb-back.jpg' %}" alt="Online Banking"></div>
+            <div class="modal-body">
+              <h3 class="olb__header">Online Banking</h3>
+              <div class="dropdown-select-container"><button class="select dropdown-toggle" type="button"
+                  id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><span
+                    class="inner">Personal</span></button>
+                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                  <div><a class="dropdown-item" href="https://netbank.ffsb.com/ebc_ebc1151/login/263184488"
+                      data-link-id="" data-link-type-id="url" rel="noopener noreferrer">eCorp</a></div>
+                  <div><a class="dropdown-item"
+                      href="https://ffbf.myloancare.com/pub/index.html#/Login?ReturnUrl=%2f&AspxAutoDetectCookieSupport=1"
+                      data-link-id="" data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Mortgage</a></div>
+                  <div><a class="dropdown-item" href="https://spendtrack.fiservapp.com/first-federal-bank/"
+                      data-link-id="" data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Business Credit Cards</a></div>
+                  <div><a class="dropdown-item" href="https://onlinebanking.firstdata.com/ecs/first-federal-bank"
+                      data-link-id="" data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Personal Credit Cards</a></div>
+                  <div><a class="dropdown-item"
+                      href="https://www.uchooserewards.com/members/home.php?sid=40XXdKrlo40&amp;popup=t" data-link-id=""
+                      data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">uChoose Rewards</a></div>
+                  <div><a class="dropdown-item" href="https://translink.transfirst.com/" data-link-id=""
+                      data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Merchant Services</a></div>
+                  <div><a class="dropdown-item" href="https://ffbf.force.com/customer/" data-link-id=""
+                      data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Personal Loans</a></div>
+                  <div><a class="dropdown-item" href="https://ffbf.force.com/customer/" data-link-id=""
+                      data-link-type-id="url" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                      rel="noopener noreferrer">Business Loans</a></div>
+                </div>
+              </div>
+              <form id="onlineBannkingLoginForm" action="https://ecomm.ffbf.com/pbi_pbi1151/login/Remote/263184488/"
+                method="POST" data-parsley-validate="">
+                <div class="input-wrapper"><label for="onlineBannkingLogin_username" class="sr-only">Online Banking
+                    Username</label> <span class="icon icon-user"></span> <input type="text"
+                    id="onlineBannkingLogin_username" name="username" placeholder="Account ID" required=""></div>
+                <div class="input-wrapper"><label for="onlineBannkingLogin_password" class="sr-only">Online Banking
+                    Password</label> <span class="icon icon-key"></span> <input type="password"
+                    id="onlineBannkingLogin_password" name="password" placeholder="Password" autocomplete="off"
+                    required=""> <button type="submit" class="btn btn-primary olbLogin-button">Login</button></div>
+              </form>
+            </div>
+            <div class="modal-footer text-center">
+              <ul class="login-links list-inline">
+                <li><a href="https://ecomm.ffbf.com/PBI_PBI1151/Enroll/263184488" target="_blank">Enroll</a></li>
+                <li><a href="https://ecomm.ffbf.com/PBI_PBI1151/ForgotPassword/263184488" target="_blank">User ID &
+                    Password Help</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="main" role="main">
+        <div class="loader grid-lines hidden-content"><span class="loading"><span class="loading-inner"></span></span>
+          <div class="load-watch">
+            <div class="hero third">
+              <div class="slide hidden-content">
+                <div class="image" data-content-block="hero3image1" data-content="content" data-editable="editable">
+                  <div><img alt="" src="{% static './assets/files/30MFWmRV/HELOC-HomeSlider-2022-Final.jpg' %}" image-id="30MFWmRV"
+                      style="left: 50%; margin-left: -673.5px;"></div>
+                </div>
+                <div class="caption">
+                  <div class="container short-body blue-bg">
+                    <div class="background-grid"></div>
+                    <div class="content" data-content-block="hero3caption1" data-content="content"
+                      data-editable="editable">
+                      <div>
+                        <h2 class="h1"><span style="font-size: 44px;">3.99% APR HELOC</span></h2>
+                        <h6><span
+                            style="color: #e2e2e2; font-family: Karla, sans-serif; font-size: 0.9375rem; font-weight: bold; letter-spacing: 0.25rem; text-transform: uppercase;">for
+                            the first 12 months |<a href="personal/heloc.html" data-link-id="/personal/heloc"
+                              data-link-type-id="page" class="" data-disclaimer-id="null" target="_self"> Learn
+                              More</a></span></h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide hidden-content">
+                <div class="image" data-content-block="hero3image2" data-content="content" data-editable="editable">
+                  <div><img alt="" src="{% static './assets/files/hpXbpxNP/CC-HomeSlider-Sept-2022-2.jpg' %}" image-id="hpXbpxNP"
+                      style="left: 50%; margin-left: -673.5px;"></div>
+                </div>
+                <div class="caption">
+                  <div class="container short-body blue-bg">
+                    <div class="background-grid"></div>
+                    <div class="content" data-content-block="hero3caption2" data-content="content"
+                      data-editable="editable">
+                      <div>
+                        <h1><span style="font-size: 44px;">Visa Rewards Credit Card</span></h1>
+                        <h6><span
+                            style="color: #e2e2e2; font-family: Karla, sans-serif; font-size: 0.9375rem; font-weight: bold; letter-spacing: 0.25rem; text-transform: uppercase;">Low
+                            Rates and Earn Rewards | <a href="credit-cards.html" data-link-id="/credit-cards"
+                              data-link-type-id="page" class="" data-disclaimer-id="null" target="_self">Learn
+                              more</a></span></h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide hidden-content">
+                <div class="image" data-content-block="hero3image3" data-content="content" data-editable="editable">
+                  <div><img alt="" src="{% static './assets/files/Cg4vgwbv/Celebrate-60-Slider3.jpg' %}" image-id="Cg4vgwbv"
+                      style="left: 50%; margin-left: -673.5px;"></div>
+                </div>
+                <div class="caption">
+                  <div class="container short-body blue-bg">
+                    <div class="background-grid"></div>
+                    <div class="content" data-content-block="hero3caption3" data-content="content"
+                      data-editable="editable">
+                      <div>
+                        <h2 class="h1"><span style="font-size: 44px;">60 Days of Giving</span></h2>
+                        <h6><span
+                            style="color: #e2e2e2; font-family: Karla, sans-serif; font-size: 0.9375rem; font-weight: bold; letter-spacing: 0.25rem; text-transform: uppercase;">
+                            <h6><a href="60-days-of-giving.html" data-link-id="/60-days-of-giving"
+                                data-link-type-id="page" class="" data-disclaimer-id="null" target="_self">view the list
+                                of recipients</a></h6>
+                          </span></h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="slide hidden-content">
+                <div class="image" data-content-block="hero3image4" data-content="content" data-editable="editable">
+                  <div><br></div>
+                </div>
+                <div class="caption">
+                  <div class="container short-body blue-bg">
+                    <div class="background-grid"></div>
+                    <div class="content" data-content-block="hero3caption4" data-content="content"
+                      data-editable="editable">
+                      <div><br></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="hero-navigation-outer">
+              <div class="container">
+                <div class="hero-navigation"><button class="toggle-autoplay active" id="pause-slider"><span
+                      class="sr-only">Click here to stop the slider's autoplay feature</span></button> <button
+                    class="toggle-autoplay" id="play-slider"><span class="sr-only">Click here to start the slider's
+                      autoplay feature</span></button></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-block-one__container content-slider hidden-content">
+          <div class="content-block-one__slider">
+            <div class="block first hidden-content">
+              <div class="container">
+                <div class="inside">
+                  <div class="row">
+                    <div class="col-md-6">
+                      <div class="caption-top">
+                        <div class="content" data-content-block="b1_1_captionTop" data-content="content"
+                          data-editable="editable">
+                          <div>
+                            <h6>CUSTOM ALERTS</h6>
+                            <div>
+                              <hr>
+                            </div>
+                            <h2>Setup custom alerts for your account </h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-6">
+                      <div class="caption-bottom">
+                        <div class="background-grid"></div>
+                        <div class="content" data-content-block="b1_1_captionBottom" data-content="content"
+                          data-editable="editable">
+                          <div>Smart Alerts are an important feature to help keep your accounts secure.  Choose which
+                            notifications you'd like to receive and the best way to receive them.  </div>
+                          <div><br></div>
+                          <div><a target="_self" data-disclaimer-id="null" class="btn btn-default "
+                              data-link-type-id="url" data-link-id="" href="personal/online-banking.html">LEARN ABOUT THE
+                              BENEFITS OF ONLINE BANKING</a></div>
+                          <div><br></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block hidden-content">
+              <div class="container">
+                <div class="inside">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="caption-top">
+                        <div class="content" data-content-block="b1_2_captionTop" data-content="content"
+                          data-editable="editable">
+                          <h5><strong>save by refinancing or consolidating debt </strong></h5>
+                          <hr>
+                          <h2>Need a loan or to start or refinance your business?  </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-md-offset-1">
+                      <div class="caption-bottom">
+                        <div class="background-grid"></div>
+                        <div class="content" data-content-block="b1_2_captionBottom" data-content="content"
+                          data-editable="editable">
+                          <div>First Federal's Commercial Team can help your business, during these unusual times. The
+                            SBA's 7(a) program has exciting new provisions: SBA fees are waived and up to 3 payments may
+                            be made on your behalf.*<br><br></div>
+                          <div><a href="https://info.ffbf.com/sba-7a" data-link-id="" data-link-type-id="url"
+                              class="btn btn-default external" data-disclaimer-id="8611aff9-f85a-11e6-b273-005056a30020"
+                              target="_self" data-disclaimer-handled="">Read more aBOUT 7(a) Loans</a></div>
+                          <div><br></div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block hidden-content">
+              <div class="container">
+                <div class="inside">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <div class="caption-top">
+                        <div class="content" data-content-block="b1_3_captionTop" data-content="content"
+                          data-editable="editable">
+                          <h6>FIRST FEDERAL SUPPORTS LOCAL ORGANIZATIONS </h6>
+                          <div>
+                            <hr>
+                          </div>
+                          <h2>Making an Impact in our Communities<o:p></o:p>
+                          </h2>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-md-7 col-md-offset-1">
+                      <div class="caption-bottom">
+                        <div class="background-grid"></div>
+                        <div class="content" data-content-block="b1_3_captionBottom" data-content="content"
+                          data-editable="editable">
+                          <p>First Federal is proud to have bolstered local communities during 2021 with close to $573,000
+                            in total donations distributed to 294 non-profits. 2022 is on track to donate even more!</p>
+                          <p><a
+                              href="https://blog.ffbf.com/first-federal-bank-positively-impacts-local-communities-throughout-2021"
+                              data-link-id="" data-link-type-id="url" class="btn btn-default " data-disclaimer-id="null"
+                              target="_blank" rel="noopener">READ MORE ABOUT OUR GIVING</a></p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="four-block__container hidden-content">
+          <div class="four-block__slider">
+            <div class="block animated">
+              <div class="inside">
+                <div class="image">
+                  <div class="overlay"></div>
+                  <div data-content-block="fourblock1image" data-content="content" data-editable="editable">
+                    <div><img alt="A photo of the front of a nondescript house."
+                        src="{% static './assets/files/4JdTFVH0/subad_community.jpg' %}" image-id="4JdTFVH0"></div>
+                  </div>
+                </div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="fourblock1caption" data-content="content"
+                      data-editable="editable">
+                      <h5>Mortgages</h5>
+                      <h3>Dream Home</h3>
+                      <p><a href="personal/mortgage-loans.html" data-link-id="/personal/mortgage-loans"
+                          data-link-type-id="page" class="" data-disclaimer-id="null" target="_self">Start Here</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block animated">
+              <div class="inside">
+                <div class="image">
+                  <div class="overlay"></div>
+                  <div data-content-block="fourblock2image" data-content="content" data-editable="editable">
+                    <div><img alt="A young boy peering at a piggy bank"
+                        src="{% static './assets/files/GBVoOCHB/Boy-peering-at-piggy-bank-small.jpg' %}" image-id="GBVoOCHB"></div>
+                  </div>
+                </div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="fourblock2caption" data-content="content"
+                      data-editable="editable">
+                      <h5>super savers kids</h5>
+                      <h3>Activities and Coloring Pages</h3>
+                      <p><a href="personal/super-savers-kids.html" data-link-id="/personal/super-savers-kids"
+                          data-link-type-id="page" class="" data-disclaimer-id="null" target="_self">Go Now</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block animated">
+              <div class="inside">
+                <div class="image">
+                  <div class="overlay"></div>
+                  <div data-content-block="fourblock3image" data-content="content" data-editable="editable">
+                    <div><img alt="A close up of a credit card." src="{% static './assets/content/fEkwcSJR/2017/07/05/subad_cards.png' %}"
+                        image-id="fhIkkMNy"></div>
+                  </div>
+                </div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="fourblock3caption" data-content="content"
+                      data-editable="editable">
+                      <h5>Credit Cards</h5>
+                      <h3 id="mcetoc_1bkab9rdh0">Get Rewarded</h3>
+                      <p><a href="credit-cards.html" data-link-id="/credit-cards" data-link-type-id="page" class=""
+                          data-disclaimer-id="null" target="_self">More Info</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block animated">
+              <div class="inside">
+                <div class="image">
+                  <div class="overlay"></div>
+                  <div data-content-block="fourblock4image" data-content="content" data-editable="editable">
+                    <div><img alt="A group of people enjoying a casual party at night with lights overhead."
+                        src="{% static './assets/files/kzDIpWbo/subad_savings.jpg' %}" image-id="kzDIpWbo"></div>
+                  </div>
+                </div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="fourblock4caption" data-content="content"
+                      data-editable="editable">
+                      <h5>Contributions</h5>
+                      <h3 id="mcetoc_1c5jmsjc60">Get Sponsored</h3>
+                      <p><a href="about/sponsorship-guidelines.html" data-link-id="/about/sponsorship-guidelines"
+                          data-link-type-id="page" class="" data-disclaimer-id="null" target="_self">Learn More</a></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="loader grid-lines"><span class="loading"><span class="loading-inner"></span></span>
+          <div class="load-watch">
+            <div class="hero newsletter">
+              <div class="image" data-content-block="Newsletterimage" data-content="content" data-editable="editable">
+                <div><img alt="" src="{% static './assets/files/G9rxCW8T/Kids-Summer-Sprinkler.jpg' %}" image-id="G9rxCW8T"
+                    style="left: 50%; margin-left: -673.5px;"></div>
+              </div>
+              <div class="caption animated">
+                <div class="container">
+                  <div class="background-grid"></div>
+                  <div class="content">
+                    <h6>Subscribe</h6>
+                    <div class="ajax-form-container">
+                      <div class="form-container">
+                        <h2>The news at First Federal</h2>
+                        <script>hbspt.forms.create({ portalId: "1649488", formId: "3ec0ea58-4971-4c17-a20f-4f65f92da49e" })</script>
+                      </div>
+                      <div class="success-container">
+                        <div class="content" data-content-block="successCopy" data-content="content"
+                          data-editable="editable">
+                          <blockquote>
+                            <h4>Thank you for signing up to get our newsletter and other information about products and
+                              services.</h4>
+                            <p>Don't forget to like us on <a href="https://www.facebook.com/FirstFederalBank"
+                                data-link-id="" data-link-type-id="url" class="external" data-disclaimer-id="null"
+                                target="_blank" rel="noopener">Facebook</a>, too, to stay in-the-know. </p>
+                          </blockquote>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="content-block-two__container content-slider hidden-content">
+          <div class="container">
+            <div class="content-block-two__slider">
+              <div class="block first hidden-content animated">
+                <div class="inside">
+                  <div class="caption-right">
+                    <div class="content" data-content-block="b1_1_caption" data-content="content"
+                      data-editable="editable">
+                      <h6>People are talking!</h6>
+                      <hr>
+                      <h3>&quot;I wanted to take this opportunity to sincerely thank you and your staff for all your
+                        efforts in assisting us with the PPP Program. I hope each of you know what a positive impact you
+                        have made for so many families in our community.&quot;</h3>
+                      <h4><em>Lauri Adams</em></h4>
+                      <h6>Lake City, FL</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block hidden-content">
+                <div class="inside">
+                  <div class="caption-right">
+                    <div class="content" data-content-block="b1_2_caption" data-content="content"
+                      data-editable="editable">
+                      <h6>People are talking!</h6>
+                      <hr>
+                      <h3>&quot;We bank with First Federal because of their reputation, their people, and their
+                        outstanding customer service .&quot;</h3>
+                      <h4><em>Scott Moore</em></h4>
+                      <h6>Lake City, FL</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block hidden-content">
+                <div class="inside">
+                  <div class="caption-right">
+                    <div class="content" data-content-block="b1_3_caption" data-content="content"
+                      data-editable="editable">
+                      <h6>PEOPLE ARE TALKING!</h6>
+                      <hr>
+                      <h3>&quot;Our banking relationship with First Federal started in 1999. It's been an absolutely
+                        hassle-free, wonderful experience and they're the best group of people to deal with that I have
+                        ever dealt with in any sort of banking relationship.&quot;</h3>
+                      <h4>Dr. Celia Martin</h4>
+                      <h6>LAKE CITY, FL</h6>
+                      <div><br></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block hidden-content">
+                <div class="inside">
+                  <div class="caption-right">
+                    <div class="content" data-content-block="b1_4_caption" data-content="content"
+                      data-editable="editable">
+                      <div>
+                        <h6>PEOPLE ARE TALKING!</h6>
+                        <hr>
+                        <h3>&quot;[We] are proud to be part of this great bank, the honest truth is………it`s the people who
+                          work at the bank [that] make it happen. &quot;</h3>
+                        <h4>Nick Patel</h4>
+                        <h6>LAKE CITY, FL</h6>
+                        <br>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="block hidden-content last">
+                <div class="inside">
+                  <div class="caption-right">
+                    <div class="content" data-content-block="b1_5_caption" data-content="content"
+                      data-editable="editable">
+                      <div>
+                        <h6>People are talking!</h6>
+                        <hr>
+                        <h3>&quot;We've been with the bank 4-6 months and the experience has been highly positive. Dana
+                          has always promptly and enthusiastically supported our service requests, and we've always gotten
+                          what we needed when we needed it. Both the bank and Dana are doing a great job for us.&quot;
+                        </h3>
+                        <h4><em>Adrian Z. Sedlin</em></h4>
+                        <h6>Goleta, CA</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="two-block__container">
+          <div class="two-block__slider">
+            <div class="block first animated">
+              <div class="inside">
+                <div class="background-grid"></div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="twoblock1caption" data-content="content"
+                      data-editable="editable">
+                      <h5>Community oriented</h5>
+                      <h3>Over $250,000 given in 2022.</h3>
+                      <p>Our foundation is helping our neighbors and communities thrive. That's why we're always focused
+                        on doing what we can to support education, build strong families, support affordable housing, and
+                        help those less fortunate. </p>
+                      <h4><em><a href="about/community.html" data-link-id="/about/community" data-link-type-id="page"
+                            class="" data-disclaimer-id="null" target="_self">Read More.</a></em></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="block second animated">
+              <div class="inside">
+                <div class="background-grid"></div>
+                <div class="caption">
+                  <div class="inner">
+                    <div class="content" data-content-block="twoblock2caption" data-content="content"
+                      data-editable="editable">
+                      <h5>Our Story</h5>
+                      <h3 id="mcetoc_1bjvn8ru50">The History of FFB</h3>
+                      <p>In 1962, a group of businessmen in a small town in North Florida united together to form First
+                        Federal Savings and Loan Association of Live Oak, as a way to provide home loans and savings
+                        accounts to their neighbors. We owe them everything.</p>
+                      <h4><em><a href="about/history.html" data-link-id="/about/history" data-link-type-id="page" class=""
+                            data-disclaimer-id="null" target="_self">Read More. </a></em></h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</body>
+{% endblock %}
